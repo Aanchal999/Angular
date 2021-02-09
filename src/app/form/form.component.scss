@@ -1,12 +1,18 @@
-input{
-    width: 300px;
+button{
+    margin-top: 20px;
+    width: 150px;
+}
+label{
+    margin: auto;
+}
+#submit{
+    margin-left: 75%;
 }
 
-#check_box{
-    margin-left: 10px;
-    
+#cancel{
+    margin-right: 50%;
 }
-.container{
+#radio{
     margin-left: 100px;
-    margin-top: 35px;
+    margin-top: 10px;
 }

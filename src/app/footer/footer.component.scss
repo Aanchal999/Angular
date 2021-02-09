@@ -1,9 +1,15 @@
 footer{
-    background-color: rgb(2, 59, 245);
-    position: fixed;
+    padding-top: 10px;
+    background-color: rgb(56, 57, 59);
+    margin-top: 15px;
     left: 0;
     bottom: 0;
-    height: 50px;
     width: 100%;
+    color: white;
+}
+
+i{
+    float: right;
+    padding: 10px;
     color: white;
 }
