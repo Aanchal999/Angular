@@ -9,9 +9,11 @@ export class FormComponent implements OnInit {
 
   public Disable = true;
   public name = "";
+  
+  
 
   constructor() { }
-
+  
   ngOnInit(): void {
   }
 
