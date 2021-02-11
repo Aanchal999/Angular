@@ -20,4 +20,15 @@ export class HeaderComponent implements OnInit {
     this.show();
   }
 
+  public signup = false;
+  public signin = true;
+  onClick()
+  {
+     this.signin=false;
+     this.signup=true;
+
+  }
+
+  headerData = [{"item":"Home"}, {"item": "About"}, {"item": "Services"}, {"item": "Contact"}];
+
 }
