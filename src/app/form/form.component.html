@@ -3,19 +3,18 @@
     <h2>welcome</h2>
     <div class="row">
       <div class="col-md">
-        <label>First Name:</label>
-        <input [(ngModel)]="name" type="text"class="form-control" name="bind" placeholder="First name"> 
-        {{name}}
+        <label>First Name:{{fname}}</label>
+        <input [(ngModel)]="fname"[disabled]="Disable" type="text"class="form-control" name="n1" placeholder="First name"> 
       </div>
       <div class="col-md">
-        <label>Last Name:</label>
-        <input [disabled]="Disable" type="text" class="form-control" placeholder="Last name">
+        <label>Last Name:{{lname}}</label>
+        <input [(ngModel)]="lname" [disabled]="Disable" type="text"name="n2" class="form-control" placeholder="Last name">
       </div>
     </div>
     <div class="row">
       <div class="col-md">
-        <label>Email:</label>
-        <input [disabled]="Disable" type="email"class="form-control" placeholder="Email">  
+        <label>Email:{{email}}</label>
+        <input [(ngModel)]="email" [disabled]="Disable" name="n3" type="email"class="form-control" placeholder="Email">  
       </div>
       <div class="col-md">
         <label>Password:</label>
@@ -27,10 +26,7 @@
         <label >Country:</label>
         <select name="Country" class="custom-select form-control">
           <option selected>Select Country</option>
-          <option >India</option>
-          <option >China</option>
-          <option >America</option>
-          <option >Africa</option>
+          <option *ngFor = "let ctr of countryData">{{ctr.country}}</option>
         </select>
       </div>
       <div class="col-md">

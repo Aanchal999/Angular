@@ -8,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class FormComponent implements OnInit {
 
   public Disable = true;
-  public name = "";
+  public fname = "";
+  public lname = "";
+  public email = "";
   
   
 
@@ -23,6 +25,8 @@ export class FormComponent implements OnInit {
      alert("Fields Will be Enabled!!");
      this.Disable=false;
   }
-  
+
+
+  countryData = [{"country":"India"}, {"country": "China"}, {"country": "America"}, {"country": "Africa"}];
 
 }
