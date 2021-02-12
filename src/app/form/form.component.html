@@ -1,26 +1,87 @@
 <div class="container">
-  <form >
-    <h2>welcome</h2>
+  <form name="form" *ngFor="let model of form_data" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" >
     <div class="row">
       <div class="col-md">
-        <label>First Name:{{fname}}</label>
-        <input [(ngModel)]="fname"[disabled]="Disable" type="text"class="form-control" name="n1" placeholder="First name"> 
+        <label>First Name:</label>
+        <input name="firstName" [(ngModel)]="model.firstname" #firstName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }"  type="text" class="form-control" placeholder="First name" required> 
+
+        <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
+          <div *ngIf="firstName.hasError('required')">First Name is required</div>
+      </div>
+
       </div>
       <div class="col-md">
-        <label>Last Name:{{lname}}</label>
-        <input [(ngModel)]="lname" [disabled]="Disable" type="text"name="n2" class="form-control" placeholder="Last name">
+        <label>Last Name:</label>
+        <input name="lastName" [(ngModel)]="model.lastname" #lastName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }"   type="text" class="form-control" placeholder="Last name" required>
+
+        <div *ngIf="f.submitted && lastName.invalid" class="invalid-feedback">
+          <div *ngIf="lastName.errors!.required">Last Name is required</div>
+      </div>
+
+      </div>
+      <div class="col-md">
+        <label>Phone no.:</label>
+        <input [(ngModel)]="model.phone" #phone="ngModel" [ngClass]="{ 'is-invalid': f.submitted && phone.invalid }" type="text"name="phone" class="form-control" placeholder="Last name"required>
+
+        <div *ngIf="f.submitted && phone.invalid" class="invalid-feedback">
+          <div *ngIf="phone.errors!.required">Phone no. is required</div>
+      </div>
+
+
       </div>
     </div>
     <div class="row">
       <div class="col-md">
-        <label>Email:{{email}}</label>
-        <input [(ngModel)]="email" [disabled]="Disable" name="n3" type="email"class="form-control" placeholder="Email">  
+        <label>Email:</label>
+        <input name="email" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" type="email"class="form-control" placeholder="Email" required>  
+
+
+        <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+          <div *ngIf="email.errors!.required">Email is required</div>
+          <div *ngIf="email.errors!.email">Email must be a valid email address</div>
+      </div>
+
       </div>
       <div class="col-md">
         <label>Password:</label>
-        <input [disabled]="Disable" type="password" class="form-control" placeholder="Password">
+        <input  type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required minlength="6" placeholder="Password" >
+
+        
+        <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+          <div *ngIf="password.errors!.required">Password is required</div>
+          <div *ngIf="password.errors!.minlength">Password must be at least 6 characters</div>
+      </div>
+
+      </div>
+      <div class="col-md">
+        <label>Confirm Password:</label>
+        <input  type="password" class="form-control" placeholder="Password" required>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-md">
+        <label>Address Line1:</label>
+        <input name="address1" [(ngModel)]="model.address1" #address1="ngModel" [ngClass]="{ 'is-invalid': f.submitted && address1.invalid }"  type="text" class="form-control" placeholder="Address Line1" required> 
+
+        <div *ngIf="f.submitted && address1.invalid" class="invalid-feedback">
+          <div *ngIf="address1.errors!.required">Address Line1 is required</div>
+          
+      </div>
+
+      </div>
+      <div class="col-md">
+        <label>Address Line2:</label>
+        <input name="address2" [(ngModel)]="model.address2" #address2="ngModel" [ngClass]="{ 'is-invalid': f.submitted && address2.invalid }"  type="text" class="form-control" placeholder="Address Line2" required>
+
+        <div *ngIf="f.submitted && address2.invalid" class="invalid-feedback">
+          <div *ngIf="address2.errors!.required">Address Line2 is required</div>
+          
+      </div>
+
+      </div>
+    </div>
+
     <div class="row">
       <div class="col-md">
         <label >Country:</label>
@@ -29,22 +90,30 @@
           <option *ngFor = "let ctr of countryData">{{ctr.country}}</option>
         </select>
       </div>
+
       <div class="col-md">
-        <label>Gender:</label><br>
-        <label class="radio-inline">
-          <input type="radio" name="gender">Female
-        </label>
-        <label id="radio" class="radio-inline">
-          <input type="radio" name="gender">Male
-        </label>
+        <label >State:</label>
+        <select name="State" class="custom-select form-control">
+          <option selected>Select State</option>
+          <option *ngFor = "let st of stateData">{{st.state}}</option>
+        </select>
       </div>
+
+      <div class="col-md">
+        <label >City:</label>
+        <select name="City" class="custom-select form-control">
+          <option selected>Select City</option>
+          <option *ngFor = "let ct of cityData">{{ct.city}}</option>
+        </select>
+      </div>
+      
     </div>
     <div class="row">
       <div class="col-md">
-        <button id="submit" type="button" class="btn btn-primary">Submit</button>
+        <button id="submit" type="submit" class="btn btn-primary">Register</button>
       </div>
       <div class="col-md">
-        <button (click)="onClick()" id="cancel" type="button" class="btn btn-danger">Enable</button>
+        <button id="cancel" type="reset" class="btn btn-danger">Cancel</button>
       </div>
     </div>
   </form>

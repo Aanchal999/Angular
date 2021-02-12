@@ -22,13 +22,12 @@ export class HeaderComponent implements OnInit {
 
   public signup = false;
   public signin = true;
-  onClick()
+  
+  isDisplay=false;
+  toggleDisplay()
   {
-     this.signin=false;
-     this.signup=true;
-
+    this.isDisplay=!this.isDisplay;
   }
-
   headerData = [{"item":"Home"}, {"item": "About"}, {"item": "Services"}, {"item": "Contact"}];
 
 }

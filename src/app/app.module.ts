@@ -8,13 +8,15 @@ import { FooterComponent } from './footer/footer.component';
 import { FormComponent } from './form/form.component';
 import { ImageComponent } from './image/image.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
     FormComponent,
-    ImageComponent
+    ImageComponent,
+    
   ],
   imports: [
     BrowserModule,

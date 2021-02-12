@@ -7,26 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
-  public Disable = true;
+  
   public fname = "";
   public lname = "";
+  public Pno = "";
   public email = "";
-  
-  
-
+ 
   constructor() { }
+
+  form_data=[{"firstname":"","lastname":"","phone":"","email":"","password":"","address1":"","address2":""}]
   
   ngOnInit(): void {
   }
+   
 
   
-  onClick()
-  {
-     alert("Fields Will be Enabled!!");
-     this.Disable=false;
+  onSubmit() {
+    alert(JSON.stringify(this.form_data))
   }
-
-
   countryData = [{"country":"India"}, {"country": "China"}, {"country": "America"}, {"country": "Africa"}];
+  cityData = [{"city":"Lucknow"}, {"city": "Varansi"}, {"city": "Noida"}, {"city": "Gaziabad"}];
+  stateData = [{"state":"Uttar Pradesh"}, {"state": "Gujrat"}, {"state": "Maharashtra"}, {"state": "Rajasthan"}];
 
 }

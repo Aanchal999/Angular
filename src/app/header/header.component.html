@@ -9,8 +9,8 @@
         <li class="nav-item active form-inline">
           <a *ngFor = "let abc of headerData" class="nav-link" href="#">{{abc.item}}</a>
         </li>
-        <button [disabled]="signin" (click)="onClick()" type="button" class="btn btn-outline-light text-light" id="signin">Sign in</button>
-        <button [disabled]="signup" (click)="onClick()"type="button" class="btn btn-outline-light text-light ml-auto">Sign up</button>
+        <button [hidden]="!isDisplay" type="button" (click)="toggleDisplay()" class="btn btn-outline-light text-light" id="signin">Sign in</button>
+        <button  [hidden]="isDisplay"type="button" (click)="toggleDisplay()" class="btn btn-outline-light text-light ml-auto">Sign up</button>
       </div>
     </div>
   </nav>
