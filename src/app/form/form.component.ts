@@ -7,11 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
-  
-  public fname = "";
-  public lname = "";
-  public Pno = "";
-  public email = "";
  
   constructor() { }
 
@@ -20,8 +15,6 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
   }
    
-
-  
   onSubmit() {
     alert(JSON.stringify(this.form_data))
   }
