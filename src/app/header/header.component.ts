@@ -28,6 +28,6 @@ export class HeaderComponent implements OnInit {
   {
     this.isDisplay=!this.isDisplay;
   }
-  headerData = [{"item":"Home"}, {"item": "About"}, {"item": "Services"}, {"item": "Contact"}];
+  headerData = [{"item1":"Home"}, {"item2": "About"}, {"item3": "Services"}, {"item4": "Contact"}];
 
 }

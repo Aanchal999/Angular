@@ -93,9 +93,9 @@
 
       <div class="col-md">
         <label >State:</label>
-        <select name="State" class="custom-select form-control">
+        <select name="State" class="custom-select form-control" >
           <option selected>Select State</option>
-          <option *ngFor = "let st of stateData">{{st.state}}</option>
+          <option *ngFor = "let st of stateData" >{{st.state}}</option>
         </select>
       </div>
 
@@ -103,7 +103,7 @@
         <label >City:</label>
         <select name="City" class="custom-select form-control">
           <option selected>Select City</option>
-          <option *ngFor = "let ct of cityData">{{ct.city}}</option>
+          <option *ngFor = "let ct of cityData" >{{ct.city}}</option>
         </select>
       </div>
       
