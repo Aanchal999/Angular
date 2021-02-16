@@ -7,8 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormComponent } from './form/form.component';
 import { ImageComponent } from './image/image.component';
-import { ServicesComponent } from './services/services.component';
-import { ContactComponent } from './contact/contact.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -19,13 +18,12 @@ import { ContactComponent } from './contact/contact.component';
     FormComponent,
     ImageComponent,
     routingComponents,
-    ServicesComponent,
-    ContactComponent
     
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],
