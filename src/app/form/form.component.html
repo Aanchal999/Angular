@@ -21,7 +21,7 @@
       </div>
       <div class="col-md">
         <label>Phone no.:</label>
-        <input [(ngModel)]="model.phone" #phone="ngModel" [ngClass]="{ 'is-invalid': f.submitted && phone.invalid }" type="text"name="phone" class="form-control" placeholder="Last name"required>
+        <input [(ngModel)]="model.phone" #phone="ngModel" [ngClass]="{ 'is-invalid': f.submitted && phone.invalid }" type="tel"name="phone" class="form-control" placeholder="Last name"required>
 
         <div *ngIf="f.submitted && phone.invalid" class="invalid-feedback">
           <div *ngIf="phone.errors!.required">Phone no. is required</div>

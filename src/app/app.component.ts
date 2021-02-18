@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GetcallService } from './get-call.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Mind';
+
+
+constructor(private api: GetcallService){}
+
+ ngOnInit(): void{
+  this.api.getCall().subscribe((data)=>{
+    console.log(JSON.stringify(data,null,4));
+  })
+}
 }

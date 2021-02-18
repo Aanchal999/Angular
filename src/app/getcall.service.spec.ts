@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { GetcallService } from './getcall.service';
+import { GetcallService } from './get-call.service';
 
 describe('GetcallService', () => {
   let service: GetcallService;

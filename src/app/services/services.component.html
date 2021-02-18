@@ -1,1 +1,8 @@
-<p>services works!</p>
+<div class="card">
+    <label>Email:</label>
+    <input type="text" [(ngModel)]="email" placeholder="name">
+    <label>Password:</label>
+    <input type="password" [(ngModel)]="password" placeholder="password">
+    <br>
+    <button (click)="postData()" id="submit" type="submit" class="btn btn-primary">Post Data</button>
+</div>
