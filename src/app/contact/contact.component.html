@@ -1,9 +1,11 @@
 <div class="card">
     
-    <h2>Contact Us</h2>
-    <br>
+    <h2>{{message}}</h2>
+    <app-interaction (childEvent)="message=$event" [parentData]="name"></app-interaction> 
     <input type="tel" [(ngModel)]="phone" placeholder="Phone No.">
     <br>
     <button (click)="(dataPost)" type="submit" class="btn btn-success btn-lg">Submit</button>
     
 </div>
+
+

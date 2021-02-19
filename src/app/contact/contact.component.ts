@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -7,12 +8,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ContactComponent implements OnInit {
 
+  public name:string = "Mindfire";
+  public message:any = "";
   constructor(private http: HttpClient) { }
-
+  
   ngOnInit(): void {
   }
 
-
+ 
   public phone: string ='';
   dataPost(){
 

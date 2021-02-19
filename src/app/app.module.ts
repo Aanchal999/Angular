@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FormComponent } from './form/form.component';
 import { ImageComponent } from './image/image.component';
 import { HttpClientModule } from '@angular/common/http';
+import { InteractionComponent } from './interaction/interaction.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormComponent,
     ImageComponent,
     routingComponents,
+    InteractionComponent,
     
   ],
   imports: [
