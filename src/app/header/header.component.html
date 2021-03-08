@@ -13,8 +13,16 @@
           <a *ngFor = "let abc of headerData" class="nav-item" href="/contact">{{abc.item4}}</a>
 
         </li>
-        <button [hidden]="!isDisplay" type="button" (click)="toggleDisplay()" class="btn btn-outline-light text-light" id="signin">Sign in</button>
-        <button  [hidden]="isDisplay"type="button" (click)="toggleDisplay()" class="btn btn-outline-light text-light ml-auto">Sign up</button>
+       
       </div>
     </div>
+    <form class="form-inline">
+      <div *ngIf="logIn"  >
+        <button (click)="onClick()" class="btn btn-primary " type="submit">Sign Up</button>
+      </div>
+      <div *ngIf="!logIn">
+        <button (click)="service.logOut()" class="btn btn-primary " type="submit">Log Out</button>
+      </div>
+    </form>
+
   </nav>

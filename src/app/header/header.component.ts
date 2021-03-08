@@ -1,5 +1,5 @@
 import { Component, OnInit, OnChanges, SimpleChange } from '@angular/core';
-
+import { LoginService } from 'src/app/login.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -7,7 +7,7 @@ import { Component, OnInit, OnChanges, SimpleChange } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor( public service : LoginService) { }
 
   x:string="welcome to the page";
   show():void {
@@ -18,16 +18,16 @@ export class HeaderComponent implements OnInit {
     alert("page loaded");
 
     this.show();
+    this.logIn=!this.logIn;
   }
 
-  public signup = false;
-  public signin = true;
-  
-  isDisplay=false;
-  toggleDisplay()
-  {
-    this.isDisplay=!this.isDisplay;
+  logIn:boolean=false;
+  buttonItemT:string="Sign up";
+  buttonItemF:string="Log out";
+  onClick(){
+    this.logIn=!this.logIn;
   }
+
   headerData = [{"item1":"Home"}, {"item2": "About"}, {"item3": "Services"}, {"item4": "Contact"}];
 
 }

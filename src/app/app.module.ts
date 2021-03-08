@@ -9,6 +9,10 @@ import { FormComponent } from './form/form.component';
 import { ImageComponent } from './image/image.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InteractionComponent } from './interaction/interaction.component';
+import { AuthService } from './auth.service';
+import { AuthGuard } from './auth.guard';
+import { LoginService } from './login.service';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -20,6 +24,7 @@ import { InteractionComponent } from './interaction/interaction.component';
     ImageComponent,
     routingComponents,
     InteractionComponent,
+    LoginComponent,
     
   ],
   imports: [
@@ -28,7 +33,7 @@ import { InteractionComponent } from './interaction/interaction.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard,LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
